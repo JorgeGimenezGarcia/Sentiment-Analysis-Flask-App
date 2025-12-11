@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>Movie Review Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🎬 Movie Review Sentiment Analyzer</h2>
+        <p>Enter a movie review below to verify if it's Positive or Negative.</p>
+        
+        {% from "_formhelpers.html" import render_field %}
+        <form method="post" action="/results">
+            <dl>
+                {{ render_field(form.moviereview, cols='30', rows='10', placeholder='Write your review here...') }}
+            </dl>
+            <input type="submit" value="Analyze Sentiment">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Analysis Result</h2>
+        
+        <div class="result-box">
+            <strong>Your Review:</strong><br>
+            {{ content }}
+        </div>
+
+        <h3>Prediction: <span style="color: #2980b9;">{{ prediction }}</span></h3>
+        <p>Probability: {{ probability }}%</p>
+
+        <hr>
+        <p>Is this prediction correct?</p>
+        <form action="/thanks" method="post">
+            <input type="hidden" name="review" value="{{ content }}">
+            <input type="hidden" name="prediction" value="{{ prediction }}">
+            
+            <input type="submit" class="feedback-btn correct" name="feedback_button" value="Correct">
+            <input type="submit" class="feedback-btn incorrect" name="feedback_button" value="Incorrect">
+        </form>
+    </div>
+</body>
+</html>

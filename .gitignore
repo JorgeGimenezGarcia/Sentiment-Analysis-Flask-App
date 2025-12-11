@@ -1,0 +1,22 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints
+
+# Database (Optional: If you want to keep the DB private/local, uncomment the next line)
+# *.sqlite
+
+# IDE settings (VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Mac OS junk
+.DS_Store
